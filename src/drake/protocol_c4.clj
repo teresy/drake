@@ -114,7 +114,7 @@
               wrap-row-fn
               eval-with-ns)
         opts {:headers *columns*
-              :skip-errors (= true (get-in step [:opts :skip_errors]))}]
+              :skip-errors (true? (get-in step [:opts :skip_errors]))}]
     (c4/xform-lines-robustly *in-file* f *out-file* opts)))
 
 (defn exec-rows

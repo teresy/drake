@@ -238,7 +238,7 @@
        (and (not triggered)
             (some #(not (fs di/data-in? %)) outputs)) "missing output"
        ;; timecheck disabled
-       (= false (get-in step [:opts :timecheck])) nil
+       (false? (get-in step [:opts :timecheck])) nil
        ;; built as a dependency?
        triggered "projected timestamped"
        ;; no-input steps are always rebuilt
